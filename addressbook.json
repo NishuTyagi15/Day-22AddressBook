@@ -22,17 +22,6 @@
     "mobile": 7497497399,
     "email": "krati.gupta@gmail.com"
   }, {
-    "firstname": "Sunidhi",
-    "lastname": "Goel",
-    "addressObj": {
-      "addressLocal": "Nirman Vihar",
-      "city": "New Delhi",
-      "state": "Delhi",
-      "zip": 110091
-    },
-    "mobile": 7393738933,
-    "email": "sunidhi.goel@gmail.com"
-  }, {
     "firstname": "Anjali",
     "lastname": "Yadav",
     "addressObj": {
