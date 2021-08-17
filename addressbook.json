@@ -25,10 +25,10 @@
     "firstname": "Sunidhi",
     "lastname": "Goel",
     "addressObj": {
-      "addressLocal": "Laxmi Nagar",
+      "addressLocal": "Nirman Vihar",
       "city": "New Delhi",
       "state": "Delhi",
-      "zip": 110092
+      "zip": 110091
     },
     "mobile": 7393738933,
     "email": "sunidhi.goel@gmail.com"
