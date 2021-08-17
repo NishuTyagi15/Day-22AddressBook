@@ -1,0 +1,58 @@
+{
+  "persons": [{
+    "firstname": "Nishu",
+    "lastname": "Tyagi",
+    "addressObj": {
+      "addressLocal": "Vasundhara",
+      "city": "Ghaziabad",
+      "state": "Uttar Pradesh",
+      "zip": 201012
+    },
+    "mobile": 9659674937,
+    "email": "nishu.tyagi@gmail.com"
+  }, {
+    "firstname": "Krati",
+    "lastname": "Gupta",
+    "addressObj": {
+      "addressLocal": "Lajpat Nagar",
+      "city": "Kanpur",
+      "state": "Uttar Pradesh",
+      "zip": 208005
+    },
+    "mobile": 7497497399,
+    "email": "krati.gupta@gmail.com"
+  }, {
+    "firstname": "Sunidhi",
+    "lastname": "Goel",
+    "addressObj": {
+      "addressLocal": "Laxmi Nagar",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "zip": 110092
+    },
+    "mobile": 7393738933,
+    "email": "sunidhi.goel@gmail.com"
+  }, {
+    "firstname": "Anjali",
+    "lastname": "Yadav",
+    "addressObj": {
+      "addressLocal": "Indirapuram",
+      "city": "Ghaziabad",
+      "state": "Uttar Pradesh",
+      "zip": 201011
+    },
+    "mobile": 9746493898,
+    "email": "anjali.yadav@gmail.com"
+  }, {
+    "firstname": "kajal",
+    "lastname": "chaudhary",
+    "addressObj": {
+      "addressLocal": "Raj Nagar",
+      "city": "Ghaziabad",
+      "state": "Uttar Pradesh",
+      "zip": 201020
+    },
+    "mobile": 7668998882,
+    "email": "kajal.chaudhary@gmail.com"
+  }]
+}
