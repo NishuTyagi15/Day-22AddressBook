@@ -100,10 +100,12 @@ public class AddressBookMain implements AddressBookInterface {
 
                 System.out.println();
                 System.out.println("Edit Completed!");
-            } else
+            } else {
                 System.out.println("No Person Found with this Number");
-        } else
+            }
+        } else {
             System.out.println("This is Empty! There is No record to Edit!");
+        }
     }
 
 //    public static void PrintPersonDetails(ArrayList<Person> persons, String statename) {
@@ -183,8 +185,8 @@ public class AddressBookMain implements AddressBookInterface {
                     System.out.println("---------------Exit Address Book-----------------");
                     isExitAddressBook = true;
                     System.out.println("Thank you for your Time!");
-
                     break;
+                    
                 default:
                     System.out.println("Invalid Option! Please Choose Correct Options from the Menu!");
                     break;
