@@ -135,23 +135,6 @@ public class AddressBookMain implements AddressBookInterface {
         }
     }
 
-//    public static void PrintPersonDetails(ArrayList<Person> persons, String statename) {
-//        String str = "";
-//        str += "Person Detail\n";
-//        for (int i = 0; i < persons.size(); i++) {
-//            if (!statename.isEmpty() && statename.equals(persons.get(i).getAddressObj().getState())) {
-//                str += persons.get(i).getFirstname() + " ";
-//                str += persons.get(i).getLastname() + " ";
-//                str += persons.get(i).getEmail() + " ";
-//                str += persons.get(i).getAddressObj().getAddressLocal() + " ";
-//                str += persons.get(i).getAddressObj().getCity() + " ";
-//                str += persons.get(i).getAddressObj().getState() + " ";
-//                str += persons.get(i).getAddressObj().getZip() + " ";
-//                str += persons.get(i).getMobile() + " \n";
-//            }
-//        }
-//    }
-
     @Override
     public void save() {
         System.out.println("------------Save Persons Details-------------");

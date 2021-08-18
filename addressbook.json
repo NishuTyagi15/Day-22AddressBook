@@ -3,9 +3,8 @@
     "firstname": "Nishu",
     "lastname": "Tyagi",
     "addressObj": {
-      "addressLocal": "Vasundhara",
       "city": "Ghaziabad",
-      "state": "Uttar Pradesh",
+      "state": "UttarPradesh",
       "zip": 201012
     },
     "mobile": 9659674937,
@@ -14,9 +13,8 @@
     "firstname": "Krati",
     "lastname": "Gupta",
     "addressObj": {
-      "addressLocal": "Lajpat Nagar",
       "city": "Kanpur",
-      "state": "Uttar Pradesh",
+      "state": "UttarPradesh",
       "zip": 208005
     },
     "mobile": 7497497399,
@@ -25,9 +23,8 @@
     "firstname": "Anjali",
     "lastname": "Yadav",
     "addressObj": {
-      "addressLocal": "Indirapuram",
       "city": "Ghaziabad",
-      "state": "Uttar Pradesh",
+      "state": "UttarPradesh",
       "zip": 201011
     },
     "mobile": 9746493898,
@@ -36,12 +33,31 @@
     "firstname": "kajal",
     "lastname": "chaudhary",
     "addressObj": {
-      "addressLocal": "Raj Nagar",
       "city": "Ghaziabad",
-      "state": "Uttar Pradesh",
+      "state": "UttarPradesh",
       "zip": 201020
     },
     "mobile": 7668998882,
     "email": "kajal.chaudhary@gmail.com"
+  }, {
+    "firstname": "roshni",
+    "lastname": "bansal",
+    "addressObj": {
+      "city": "Ghaziabad",
+      "state": "UttarPradesh",
+      "zip": 201010
+    },
+    "mobile": 8987738748,
+    "email": "roshni.bansal@gmail.com"
+  }, {
+    "firstname": "sunidhi",
+    "lastname": "goel",
+    "addressObj": {
+      "city": "NewDelhi",
+      "state": "Delhi",
+      "zip": 110092
+    },
+    "mobile": 7876988876,
+    "email": "sunidhi.goel@gmail.com"
   }]
 }

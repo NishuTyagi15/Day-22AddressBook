@@ -20,6 +20,6 @@ public class JsonMethod {
     public static String writeMapper(String path, Object object)
             throws JsonParseException, JsonMappingException, IOException {
         mapper.writeValue(new File(path), object);
-        return "Success writing into file";
+        return "Success writing into File";
     }
 }
