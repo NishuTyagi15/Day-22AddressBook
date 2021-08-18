@@ -9,7 +9,9 @@ public class Address {
     private String city;
     private String state;
     private int zip;
-
+    public String getAddressLocal() {
+        return addressLocal;
+    }
     public void setAddressLocal(String addressLocal) {
         this.addressLocal = addressLocal;
     }

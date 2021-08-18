@@ -30,6 +30,149 @@ public class AddressBookMain implements AddressBookInterface {
     }
 
     @Override
+    public void createNewAddressBook() {
+        System.out.println("---------------New Address Book--------------");
+        System.out.println("Enter State Name: ");
+        statename = S.next();
+
+        boolean isFoundState = false;
+        for (int i = 0; i < persons.size(); i++) {
+            if (persons.get(i).getAddressObj().getState().equals(statename)) {
+                isFoundState = true;
+                break;
+            }
+        }
+        if (!isFoundState) {
+            System.out.println("State is Added");
+            boolean close = false;
+
+            while (!close) {
+                System.out.println("Select an Option!");
+                System.out.println("1. Add Person Details");
+                System.out.println("2. Edit Person Details");
+                System.out.println("3. Delete Person Details");
+                System.out.println("4. Print Person Details");
+                System.out.println("5. Close the Address Book");
+                int select = S.nextInt();
+                switch (select) {
+                    case 1:
+                        // add person
+                        addPerson();
+                        break;
+                    case 2:
+                        // edit person
+                        editPerson();
+                        break;
+                    case 3:
+                        // delete person
+                        deletePerson();
+                        break;
+                    case 4:
+                        // print
+                        if (counter > 0) {
+                            System.out.println("Printing All Records...");
+                            AddressBookMain.printPersonDetails(persons, statename);
+                        } else {
+                            System.out.println("There is No Record to Print...");
+                        }
+                        break;
+                    case 5:
+                        // Close
+                        close = true;
+                        System.out.println("Closing...");
+                        break;
+                    default:
+                        System.out.println("Invalid Option!");
+                }
+            }
+        } else {
+            System.out.println("State Already Exist Please Try Again!");
+        }
+        System.out.println("--------------New Address Book-------------");
+    }
+
+    @Override
+    public void openAddressBook() {
+        System.out.println("--------------Open Address Book---------------");
+        HashMap<String, String> map = new HashMap<>();
+        for (int i = 0; i < persons.size(); i++) {
+            map.put(persons.get(i).getAddressObj().getState(), persons.get(i).getAddressObj().getState());
+        }
+        System.out.println("States Available " + map.keySet());
+        System.out.println("Enter State: ");
+        statename = S.next();
+        boolean isFoundState = false;
+        for (int i = 0; i < persons.size(); i++) {
+            if (persons.get(i).getAddressObj().getState().equals(statename)) {
+                isFoundState = true;
+                break;
+            }
+        }
+        if (isFoundState) {
+            System.out.println("State is Found");
+            boolean close2 = false;
+
+            while (!close2) {
+                System.out.println("Select an Option!");
+                System.out.println("1. Add Person Details");
+                System.out.println("2. Edit Person Details");
+                System.out.println("3. Delete Person Details");
+                System.out.println("4. Print Person Details");
+                System.out.println("5. Close the Address Book");
+                switch (S.nextInt()) {
+                    case 1:
+                        // add person
+                        addPerson();
+                        break;
+                    case 2:
+                        // edit person
+                        editPerson();
+                        break;
+                    case 3:
+                        // delete person
+                        deletePerson();
+                        break;
+                    case 4:
+                        // print
+                        if (counter > 0) {
+                            System.out.println("Printing all records...");
+                            AddressBookMain.printPersonDetails(persons, statename);
+                        } else {
+                            System.out.println("There is No Record to Print...");
+                        }
+                        break;
+                    case 5:
+                        // close
+                        close2 = true;
+                        System.out.println("Closing...");
+                        break;
+                    default:
+                        System.out.println("Invalid Option!");
+                }
+            }
+        } else {
+            System.out.println("Please Create New State of that Name\nElse Try New State Name");
+        }
+        System.out.println("-----------Open Address Book-----------");
+    }
+
+    public static void printPersonDetails(ArrayList<Person> persons, String statename) {
+        String str = "";
+        str += "Person Details\n";
+        for (int i = 0; i < persons.size(); i++) {
+            if (!statename.isEmpty() && statename.equals(persons.get(i).getAddressObj().getState())) {
+                str += persons.get(i).getFirstname() + " ";
+                str += persons.get(i).getLastname() + " ";
+                str += persons.get(i).getAddressObj().getAddressLocal() + " ";
+                str += persons.get(i).getAddressObj().getCity() + " ";
+                str += persons.get(i).getAddressObj().getState() + " ";
+                str += persons.get(i).getAddressObj().getZip() + " ";
+                str += persons.get(i).getMobile() + " \n";
+            }
+        }
+    }
+
+    @Override
     public void addPerson() {
         System.out.println(".....Add Person's Details.....");
         Person person = new Person();
@@ -166,41 +309,31 @@ public class AddressBookMain implements AddressBookInterface {
         while (!isExitAddressBook) {
 
             System.out.println("Select an Option!");
-            System.out.println("1. Add an Entry");
-            System.out.println("2. Edit Details");
-            System.out.println("3. Delete Details");
-            System.out.println("4. Save Details");
-            System.out.println("5. Exit from the Menu");
+            System.out.println("1. New Address Book");
+            System.out.println("2. Open Address Book");
+            System.out.println("3. Save Address Book");
+            System.out.println("4. Exit from the Menu");
             System.out.print("> ");
             int choice = S.nextInt();
             switch (choice) {
                 case 1:
                     //Add Person Details
-                    main.addPerson();
+                    main.createNewAddressBook();
                     break;
-
                 case 2:
                     //Edit Details
-                    main.editPerson();
+                    main.openAddressBook();
                     break;
-
                 case 3:
                     //Delete Details
-                    main.deletePerson();
-                    break;
-
-                case 4:
-                    //Save Person Details
                     main.save();
                     break;
-
-                case 5:
+                case 4:
                     // Exit
                     System.out.println("---------------Exit Address Book-----------------");
                     isExitAddressBook = true;
                     System.out.println("Thank you for your Time!");
                     break;
-
                 default:
                     System.out.println("Invalid Option! Please Choose Correct Options from the Menu!");
                     break;
