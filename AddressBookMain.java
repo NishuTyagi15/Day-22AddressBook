@@ -21,7 +21,7 @@ public class AddressBookMain implements AddressBookInterface {
         File file = new File(path);
         if (file.exists() && file.length() != 0) {
             try {
-                model = (AddressBookModel) JsonMethod.readMapper(path, model);
+                model = (AddressBookModel) JsonMethod.read(path, model);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -80,23 +80,6 @@ public class AddressBookMain implements AddressBookInterface {
         }
     }
 
-    public static void PrintPersonDetails(ArrayList<Person> persons, String statename) {
-        String str = "";
-        str += "Person Detail\n";
-        for (int i = 0; i < persons.size(); i++) {
-            if (!statename.isEmpty() && statename.equals(persons.get(i).getAddressObj().getState())) {
-                str += persons.get(i).getFirstname() + " ";
-                str += persons.get(i).getLastname() + " ";
-                str += persons.get(i).getEmail() + " ";
-                str += persons.get(i).getAddressObj().getAddressLocal() + " ";
-                str += persons.get(i).getAddressObj().getCity() + " ";
-                str += persons.get(i).getAddressObj().getState() + " ";
-                str += persons.get(i).getAddressObj().getZip() + " ";
-                str += persons.get(i).getMobile() + " \n";
-            }
-        }
-    }
-
     @Override
     public void save() {
         System.out.println("------------Save Persons Details-------------");
@@ -104,7 +87,7 @@ public class AddressBookMain implements AddressBookInterface {
         System.out.println("......Saving details into json file......");
         model.setPersons(persons);
         try {
-            JsonMethod.writeMapper(path, model);
+            JsonMethod.write(path, model);
         } catch (IOException e) {
 
             e.printStackTrace();

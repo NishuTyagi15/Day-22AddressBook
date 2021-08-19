@@ -12,12 +12,12 @@ public class JsonMethod {
         mapper = new ObjectMapper();
     }
 
-    public static Object readMapper(String path, Object object)
+    public static Object read(String path, Object object)
             throws JsonParseException, JsonMappingException, IOException {
         return mapper.readValue(new File(path), object.getClass());
     }
 
-    public static String writeMapper(String path, Object object)
+    public static String write(String path, Object object)
             throws JsonParseException, JsonMappingException, IOException {
         mapper.writeValue(new File(path), object);
         return "Success writing into file";
