@@ -76,5 +76,16 @@
     },
     "mobile": 9887678645,
     "email": "shruti.gupta@gmail.com"
+  }, {
+    "firstname": "Neha",
+    "lastname": "Tyagi",
+    "addressObj": {
+      "addressLocal": "JayaNagar",
+      "city": "Bangalore",
+      "state": "Maharashtra",
+      "zip": 560011
+    },
+    "mobile": 9787578787,
+    "email": "neha.tyagi@gmail.com"
   }]
 }
