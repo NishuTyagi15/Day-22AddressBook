@@ -76,15 +76,21 @@ public class AddressBookMain implements AddressBookInterface {
 
     @Override
     public void editPerson() {
+        System.out.println(".....Edit Person's Details.....");
         if (counter > 0) {
+            HashMap<Long, Long> map = new HashMap<>();
+            for (int i = 0; i < persons.size(); i++) {
+                map.put(persons.get(i).getMobile(), persons.get(i).getMobile());
+            }
+            System.out.println("Available Mobile Numbers: " + map.keySet());
             System.out.println("Enter Persons Mobile Number you want to Edit:");
-            Long searchMobile = S.nextLong();
+            Long mobile = S.nextLong();
             int indexOfPerson = 0;
             boolean isFoundPerson = false;
-            for (int i = 0; i < persons.size(); i++) {
-                if (searchMobile == persons.get(i).getMobile()) {
+            for (int j = 0; j < persons.size(); j++) {
+                if (persons.get(j).getMobile().equals(mobile)) {
                     isFoundPerson = true;
-                    indexOfPerson = i;
+                    indexOfPerson = j;
                     break;
                 }
             }
@@ -107,23 +113,6 @@ public class AddressBookMain implements AddressBookInterface {
             System.out.println("This is Empty! There is No record to Edit!");
         }
     }
-
-//    public static void PrintPersonDetails(ArrayList<Person> persons, String statename) {
-//        String str = "";
-//        str += "Person Detail\n";
-//        for (int i = 0; i < persons.size(); i++) {
-//            if (!statename.isEmpty() && statename.equals(persons.get(i).getAddressObj().getState())) {
-//                str += persons.get(i).getFirstname() + " ";
-//                str += persons.get(i).getLastname() + " ";
-//                str += persons.get(i).getEmail() + " ";
-//                str += persons.get(i).getAddressObj().getAddressLocal() + " ";
-//                str += persons.get(i).getAddressObj().getCity() + " ";
-//                str += persons.get(i).getAddressObj().getState() + " ";
-//                str += persons.get(i).getAddressObj().getZip() + " ";
-//                str += persons.get(i).getMobile() + " \n";
-//            }
-//        }
-//    }
 
     @Override
     public void save() {
