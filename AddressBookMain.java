@@ -102,7 +102,7 @@ public class AddressBookMain implements AddressBookInterface {
                 System.out.println("Enter New ZipCode");
                 persons.get(indexOfPerson).getAddressObj().setZip(S.nextInt());
 
-                persons.get(indexOfPerson).setMobile(searchMobile);
+                persons.get(indexOfPerson).setMobile(mobile);
 
                 System.out.println();
                 System.out.println("Edit Completed!");
