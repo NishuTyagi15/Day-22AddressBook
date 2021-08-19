@@ -34,12 +34,17 @@ public class AddressBookMain implements AddressBookInterface {
         System.out.println(".....Add Person's Details.....");
         Person person = new Person();
 
-        System.out.println("Enter Mobile Number");
+        HashMap<Long, Long> map = new HashMap<>();
+        for (int i = 0; i < persons.size(); i++) {
+            map.put(persons.get(i).getMobile(), persons.get(i).getMobile());
+        }
+        System.out.println("Available Mobile Numbers: " + map.keySet());
+        System.out.println("Enter Mobile Number: ");
         Long mobile = S.nextLong();
         // validating mobile is not taken by anyone
         boolean isMobileTaken = false;
-        for (int i = 0; i < persons.size(); i++) {
-            if (persons.get(i).getMobile() == mobile) {
+        for (int j = 0; j < persons.size(); j++) {
+            if (persons.get(j).getMobile().equals(mobile)) {
                 isMobileTaken = true;
                 break;
             }
@@ -76,15 +81,21 @@ public class AddressBookMain implements AddressBookInterface {
 
     @Override
     public void editPerson() {
+        System.out.println(".....Edit Person's Details.....");
         if (counter > 0) {
+            HashMap<Long, Long> map = new HashMap<>();
+            for (int i = 0; i < persons.size(); i++) {
+                map.put(persons.get(i).getMobile(), persons.get(i).getMobile());
+            }
+            System.out.println("Available Mobile Numbers: " + map.keySet());
             System.out.println("Enter Persons Mobile Number you want to Edit:");
-            Long searchMobile = S.nextLong();
+            Long mobile = S.nextLong();
             int indexOfPerson = 0;
             boolean isFoundPerson = false;
-            for (int i = 0; i < persons.size(); i++) {
-                if (searchMobile == persons.get(i).getMobile()) {
+            for (int j = 0; j < persons.size(); j++) {
+                if (persons.get(j).getMobile().equals(mobile)) {
                     isFoundPerson = true;
-                    indexOfPerson = i;
+                    indexOfPerson = j;
                     break;
                 }
             }
@@ -96,7 +107,7 @@ public class AddressBookMain implements AddressBookInterface {
                 System.out.println("Enter New ZipCode");
                 persons.get(indexOfPerson).getAddressObj().setZip(S.nextInt());
 
-                persons.get(indexOfPerson).setMobile(searchMobile);
+                persons.get(indexOfPerson).setMobile(mobile);
 
                 System.out.println();
                 System.out.println("Edit Completed!");
@@ -110,15 +121,21 @@ public class AddressBookMain implements AddressBookInterface {
 
     @Override
     public void deletePerson() {
+        System.out.println(".....Delete Person's Details.....");
         if (counter > 0) {
-            System.out.println("Enter Persons Mobile Number you want to Delete:");
-            Long Mobilesearch = S.nextLong();
+            HashMap<Long, Long> map = new HashMap<>();
+            for (int i = 0; i < persons.size(); i++) {
+                map.put(persons.get(i).getMobile(), persons.get(i).getMobile());
+            }
+            System.out.println("Available Mobile Numbers: " + map.keySet());
+            System.out.println("Enter Persons Mobile Number you want to Edit:");
+            Long mobile = S.nextLong();
             int indexOfPerson = 0;
             boolean isFoundPerson = false;
-            for (int i = 0; i < persons.size(); i++) {
-                if (Mobilesearch == persons.get(i).getMobile()) {
+            for (int j = 0; j < persons.size(); j++) {
+                if (persons.get(j).getMobile().equals(mobile)) {
                     isFoundPerson = true;
-                    indexOfPerson = i;
+                    indexOfPerson = j;
                     break;
                 }
             }
