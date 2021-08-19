@@ -81,15 +81,21 @@ public class AddressBookMain implements AddressBookInterface {
 
     @Override
     public void editPerson() {
+        System.out.println(".....Edit Person's Details.....");
         if (counter > 0) {
+            HashMap<Long, Long> map = new HashMap<>();
+            for (int i = 0; i < persons.size(); i++) {
+                map.put(persons.get(i).getMobile(), persons.get(i).getMobile());
+            }
+            System.out.println("Available Mobile Numbers: " + map.keySet());
             System.out.println("Enter Persons Mobile Number you want to Edit:");
-            Long searchMobile = S.nextLong();
+            Long mobile = S.nextLong();
             int indexOfPerson = 0;
             boolean isFoundPerson = false;
-            for (int i = 0; i < persons.size(); i++) {
-                if (searchMobile == persons.get(i).getMobile()) {
+            for (int j = 0; j < persons.size(); j++) {
+                if (persons.get(j).getMobile().equals(mobile)) {
                     isFoundPerson = true;
-                    indexOfPerson = i;
+                    indexOfPerson = j;
                     break;
                 }
             }
@@ -101,7 +107,7 @@ public class AddressBookMain implements AddressBookInterface {
                 System.out.println("Enter New ZipCode");
                 persons.get(indexOfPerson).getAddressObj().setZip(S.nextInt());
 
-                persons.get(indexOfPerson).setMobile(searchMobile);
+                persons.get(indexOfPerson).setMobile(mobile);
 
                 System.out.println();
                 System.out.println("Edit Completed!");
